@@ -1,3 +1,5 @@
+# overwrite the file with a valid config
+cat > vercel.json <<'JSON'
 {
   "functions": {
     "api/**/*.py": {
@@ -6,3 +8,8 @@
     }
   }
 }
+JSON
+
+git add vercel.json
+git commit -m "fix: set functions runtime to python3.11"
+git push
